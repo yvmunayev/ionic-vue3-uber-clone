@@ -1,0 +1,44 @@
+{
+  "name": "ionic-vue2-uber-clone",
+  "version": "0.0.1",
+  "private": true,
+  "description": "An Ionic project",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/vue-fontawesome": "^3.0.0-5",
+    "@ionic/vue": "^5.4.0",
+    "@ionic/vue-router": "^5.4.0",
+    "@mapbox/mapbox-sdk": "^0.13.2",
+    "core-js": "^3.6.5",
+    "element-plus": "^1.2.0-beta.5",
+    "mapbox-gl": "^2.6.1",
+    "vue": "^3.2.1",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-e2e-cypress": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0-0",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "@vue/test-utils": "^2.0.0-0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "fork-ts-checker-webpack-plugin-v5": "npm:fork-ts-checker-webpack-plugin@^5.0.11",
+    "vue-jest": "^5.0.0-0",
+    "vue-loader-v16": "npm:vue-loader@^16.1.0"
+  }
+}
