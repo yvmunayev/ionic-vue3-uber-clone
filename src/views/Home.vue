@@ -3,7 +3,7 @@
     <ion-content class="ion-padding">
       <ion-grid>
         <ion-text color="danger">
-			<h4>Uber Clone</h4>
+			<h4>Ionic Vue 3 Uber Clone</h4>
         </ion-text>
       </ion-grid>
       <ion-item>
