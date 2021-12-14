@@ -6,18 +6,21 @@
             placeholder="Where To?"
         ></mapbox-geocoding-autocomplete>
     </ion-item>
-    <favorite-locations />
+    <favorite-locations @select="handleSelect" />
 </template>
 
 <script setup>
-    import { ref } from 'vue';
+    import { ref, computed } from 'vue';
     import { useStore } from "vuex";
     import { MapboxGeocodingAutocomplete, FavoriteLocations } from '../../components/';
 
-    const placeQuery = ref('');
     const store = useStore();
+    const destinationText = computed( () => store.state.destination && store.state.destination.place_name);
+    const placeQuery = ref(destinationText.value);
+    
 
     const handleSelect = (place) => {
         store.commit("setDestination", place);
+        placeQuery.value = place.value;
     };
 </script>

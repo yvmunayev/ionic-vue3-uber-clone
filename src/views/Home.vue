@@ -39,7 +39,7 @@
 			</ion-button>
         </ion-row>
       </ion-grid>
-      <favorite-locations />
+      <favorite-locations @select="handleSelect" />
     </ion-content>
   </ion-page>
 </template>
@@ -53,14 +53,16 @@
 	import { FavoriteLocations } from '../components';
 
 	const store = useStore();
-	const placeQuery = ref();
 
 	const originText = computed( () => store.state.origin && store.state.origin.place_name);
+	const placeQuery = ref(originText.value);
+
 	const ridePath = computed(() => (originText.value ? '/map' : ''));
 	const foodPath = computed(() => (originText.value ? '/food' : ''));
 
 	const handleSelect = (place) => {
 		store.commit('setOrigin', place);
+		placeQuery.value = place.value;
 	};
 
 </script>

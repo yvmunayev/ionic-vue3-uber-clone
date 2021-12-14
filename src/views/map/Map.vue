@@ -12,7 +12,7 @@
         <map-box-directions
             :coordinatesOrigin="coordinatesOrigin"
             :coordinatesDestination="coordinatesDestination"
-            @onLoad="handleLoadDirections"
+            @load="handleLoadDirections"
         ></map-box-directions>
     </map-box-map>
     <ion-button id="back-button" router-link="/home" class="button" color="light">

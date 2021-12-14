@@ -6,7 +6,7 @@
         coordinatesOrigin: Object,
         coordinatesDestination: Object,
     });
-    const emit = defineEmits('onLoad');
+    const emit = defineEmits('load');
     const { coordinatesOrigin, coordinatesDestination } = toRefs(props);
     const map = inject('map');
     const accessToken = inject('accessToken');
@@ -34,7 +34,7 @@
             .send()
             .then(response => {
                 const data = response.body.routes[0];
-                emit('onLoad', response.body);
+                emit('load', response.body);
                 const route = data.geometry.coordinates;
                 const geojson = {
                     type: 'Feature',
