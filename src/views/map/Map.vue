@@ -58,7 +58,6 @@
         router.replace('/home');
     }
 
-
     const handleSelect = (place) => {
         store.commit("setDestination", place);
     };
@@ -69,14 +68,14 @@
 </script>
 
 <style scoped>
-  #map {
-    background-color: #eee;
-  }
-  #back-button {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    opacity: 0.7;
-    border-radius: 50%;
-  }
+    #map {
+        background-color: #eee;
+    }
+    #back-button {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        opacity: 0.7;
+        border-radius: 50%;
+    }
 </style>

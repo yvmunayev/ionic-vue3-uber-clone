@@ -2,12 +2,12 @@
     <ion-text>{{ price }}</ion-text>
 </template>
 
-<script>
-import { computed, toRefs } from 'vue';
+<script setup>
+    import { defineProps, computed, toRefs } from '@vue/runtime-core';
 
-const SURGE_CHANGE_RATE = 1.5;
-export default {
-    props: {
+    const SURGE_CHANGE_RATE = 1.5;
+
+    const props = defineProps({
         duration: {
             type: Number,
             required: true
@@ -16,17 +16,14 @@ export default {
             type: Number,
             required: true
         },
-    },
-    setup(props) {
-        const { duration, multiplier } = toRefs(props)
-        const price = computed(() => {
-            return new Intl.NumberFormat("en-US", {
-                style: "currency",
-                currency: "USD",
-            }).format((duration.value * SURGE_CHANGE_RATE * multiplier.value) / 100);
-        });
+    });
 
-        return { price };
-    },
-}
+    const { duration, multiplier } = toRefs(props)
+    const price = computed(() => {
+        return new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD",
+        }).format((duration.value * SURGE_CHANGE_RATE * multiplier.value) / 100);
+    });
+
 </script>

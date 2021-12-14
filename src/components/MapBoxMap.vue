@@ -72,19 +72,6 @@
             fitBounds.value = true;
         }
     }
-    // const addMarker = (marker) => {
-    //     marker.addTo(map.value);
-    //     markers.value.push(marker);
-
-    //     console.log(markers.value.length, 'asdasdasdas')
-
-        
-
-    //     if (markers.value.length > 1) {
-            
-            
-    //     }
-    // };
 
     provide('accessToken', accessToken);
     provide('map', map);

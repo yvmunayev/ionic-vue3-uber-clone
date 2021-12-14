@@ -58,8 +58,8 @@
 
 <script setup>
 	import { computed, ref } from 'vue';
-	import { IonPage, IonGrid, IonRow, IonButton, IonList, IonItem, IonLabel, IonAvatar } from '@ionic/vue';
 	import { useStore } from 'vuex';
+	import { IonPage, IonGrid, IonRow, IonButton, IonList, IonItem, IonLabel, IonAvatar } from '@ionic/vue';
 	import MapboxGeocodingAutocomplete from '../components/MapboxGeocodingAutocomplete.vue';
 	import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 	import mapCardFavouritesData from '../data/mapCardFavouritesData.json';
@@ -79,22 +79,22 @@
 
 <style>
 	#navigation-content {
-	display: flex;
-		justify-content: center;
-	}
+		display: flex;
+			justify-content: center;
+		}
 	.navigation-button {
-	height: 200px;
-	margin: 15px;
+		height: 200px;
+		margin: 15px;
 	}
 	.el-autocomplete {
-	width: 100%;
+		width: 100%;
 	}
 	.el-autocomplete .el-input__inner {
-	background: transparent;
-	border: none;
-	font-size: 17px;
-	font-weight: 400;
-	color: #fff;
-	padding: 0px;
+		background: transparent;
+		border: none;
+		font-size: 17px;
+		font-weight: 400;
+		color: #fff;
+		padding: 0px;
 	}
 </style>

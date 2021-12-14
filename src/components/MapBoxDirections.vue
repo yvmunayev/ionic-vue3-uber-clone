@@ -1,8 +1,7 @@
 <script setup>
     import { inject, defineProps, toRefs, watch, defineEmits, onMounted } from '@vue/runtime-core';
     import Directions from '@mapbox/mapbox-sdk/services/directions';
-    
-    
+     
     const props = defineProps({
         coordinatesOrigin: Object,
         coordinatesDestination: Object,
