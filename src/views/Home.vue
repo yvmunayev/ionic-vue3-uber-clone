@@ -39,19 +39,7 @@
 			</ion-button>
         </ion-row>
       </ion-grid>
-      <ion-grid class="ion-margin">
-        <ion-list>
-			<ion-item v-for="item in mapCardFavouritesData" :key="item.location">
-				<ion-avatar>
-					<font-awesome-icon size="lg" :icon="item.icon" />
-				</ion-avatar>
-				<ion-label>
-					<h3>{{ item.location }}</h3>
-					<p>{{ item.destination }}</p>
-				</ion-label>
-			</ion-item>
-        </ion-list>
-      </ion-grid>
+      <favorite-locations />
     </ion-content>
   </ion-page>
 </template>
@@ -59,10 +47,10 @@
 <script setup>
 	import { computed, ref } from 'vue';
 	import { useStore } from 'vuex';
-	import { IonPage, IonGrid, IonRow, IonButton, IonList, IonItem, IonLabel, IonAvatar } from '@ionic/vue';
+	import { IonPage, IonGrid, IonRow, IonButton, IonItem } from '@ionic/vue';
 	import MapboxGeocodingAutocomplete from '../components/MapboxGeocodingAutocomplete.vue';
-	import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-	import mapCardFavouritesData from '../data/mapCardFavouritesData.json';
+	import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+	import { FavoriteLocations } from '../components';
 
 	const store = useStore();
 	const placeQuery = ref();

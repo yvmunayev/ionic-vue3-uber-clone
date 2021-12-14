@@ -19,52 +19,41 @@
         <font-awesome-icon size="1x" icon="arrow-left" />
     </ion-button>
     <ion-content>
-        <ion-item class="ion-margin">
-            <mapbox-geocoding-autocomplete
-                v-model="placeQuery"
-                @select="handleSelect"
-                placeholder="Where To?"
-            ></mapbox-geocoding-autocomplete>
-        </ion-item>
-        <ride v-if="hasTravelTimeInfo"></ride>
+        <router-view />
     </ion-content>
   </ion-page>
 </template>
 
 <script setup>
     import { computed, ref } from "@vue/runtime-core";
-    import { useRouter } from "vue-router";
+    import { useRouter, RouterView } from "vue-router";
     import { useStore } from "vuex";
     import { IonPage, IonButton, isPlatform } from '@ionic/vue';
     import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-    import { MapboxGeocodingAutocomplete, MapBoxMap, MapBoxMarker, MapBoxDirections } from '../../components/';
-    import Ride from './Ride.vue';
+    import {  MapBoxMap, MapBoxMarker, MapBoxDirections } from '../../components/';
 
     const MARKET_CONFIG= {
         color: '#C00',
     };
 
     const map = ref();
-    const placeQuery = ref('');
     const store = useStore();
     const router = useRouter();
 
     const coordinatesOrigin = computed(() => store.state.origin && store.state.origin.geometry.coordinates);
     const coordinatesDestination = computed(() => store.state.destination && store.state.destination.geometry.coordinates);
-    const hasTravelTimeInfo = computed(() => store.state.travelTimeInfo);
+    // const hasTravelTimeInfo = computed(() => store.state.travelTimeInfo);
     const styleMap = isPlatform('mobile') ? 'height: 300px' : 'height: 400px';
 
     if (!store.state.origin) {
         router.replace('/home');
     }
 
-    const handleSelect = (place) => {
-        store.commit("setDestination", place);
-    };
-
     const handleLoadDirections = (response) => {
         store.commit('setTravelTimeInfo', response);
+        router.push('/map/ride');
     }
+
 </script>
 
 <style scoped>

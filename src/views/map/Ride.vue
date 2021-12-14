@@ -1,7 +1,12 @@
 <template>
     <div>
         <ion-grid class="ion-margin">
-        <ion-text >Select a ride of {{ distance }} ml</ion-text>
+            <ion-row>
+                <ion-button router-link="/map/whereto" class="button" color="light">
+                    <font-awesome-icon size="1x" icon="arrow-left" />
+                </ion-button>
+                <ion-title >Select a ride of {{ distance }} ml</ion-title>
+            </ion-row>
         </ion-grid>
 
         <ion-grid v-show="distance" class="ion-margin">
@@ -26,7 +31,8 @@
 <script setup>
     import { computed} from "@vue/runtime-core";
     import { useStore } from "vuex";
-    import { IonGrid, IonItem, IonLabel, IonList, IonThumbnail, IonImg } from '@ionic/vue';
+    import { IonGrid, IonItem, IonLabel, IonList, IonThumbnail, IonImg, IonButton, IonTitle } from '@ionic/vue';
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
     import RidePrice from '../../components/RidePrice.vue';
     import toHHMMSS from '../../helpers/toHHMMSS';
     import mapRideData from '../../data/mapRideData.json'
